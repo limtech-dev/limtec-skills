@@ -1,0 +1,44 @@
+{
+  "name": "siemens-servo-mcp",
+  "version": "1.0.0",
+  "description": "MCP server: Siemens servo motor + SINAMICS drive + cable selection with full order numbers and USD reference prices",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "siemens",
+    "servo",
+    "sinamics",
+    "simotics",
+    "selection",
+    "sizing",
+    "1FL6",
+    "1FL2",
+    "1FK2",
+    "1FK7",
+    "1FT7",
+    "1PH8",
+    "automation"
+  ],
+  "license": "MIT",
+  "bin": {
+    "siemens-servo-mcp": "bin/siemens-servo-mcp.js"
+  },
+  "files": [
+    "bin/",
+    "scripts/",
+    "references/",
+    "server.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "commonjs",
+  "mcpName": "io.github.limtech-dev/siemens-servo-mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limtech-dev/limtec-skills.git"
+  },
+  "author": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd."
+}
