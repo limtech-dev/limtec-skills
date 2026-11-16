@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siemens Servo Motor Selector — Free Online Sizing Tool (V90 / S200 / S210 / S120) | Lim-Tec</title>
+<meta name="description" content="Free online Siemens servo motor and SINAMICS drive selector. Enter load, speed or torque and get the matched SIMOTICS motor, matched drive and cable with full order numbers, USD reference prices and a downloadable datasheet. 160 motors, 0.05–100 kW, V90 / S200 / S200 Compact / S210 / S120.">
+<meta name="keywords" content="siemens servo motor selection, servo motor sizing tool, SINAMICS V90, SINAMICS S200, SINAMICS S210, SINAMICS S120, 1FL6, 1FL2, 1FK2, 1FK7, 1FT7, 1PH8, servo motor order number, servo drive selection, free sizing software">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://limtech-dev.github.io/limtec-skills/">
+<link rel="alternate" hreflang="en" href="https://limtech-dev.github.io/limtec-skills/">
+<link rel="alternate" hreflang="zh-Hans" href="https://limtech-dev.github.io/limtec-skills/zh/">
+<link rel="alternate" hreflang="x-default" href="https://limtech-dev.github.io/limtec-skills/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lim-Tec">
+<meta property="og:title" content="Siemens Servo Motor Selector — Free Online Sizing Tool | Lim-Tec">
+<meta property="og:description" content="Enter your duty point, get the matched SIMOTICS motor + SINAMICS drive + cable with full Siemens order numbers, USD reference prices and a datasheet you can send to a customer.">
+<meta property="og:url" content="https://limtech-dev.github.io/limtec-skills/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Siemens Servo Motor Selector — Free Online Sizing Tool | Lim-Tec">
+<meta name="twitter:description" content="Size a Siemens servo drive train from a duty point: motor + drive + cable, full order numbers, USD reference prices, PDF export. Free, no account needed.">
+<style>
+:root{
+  --green:#0e7a4f; --green-d:#0d3a2a; --green-l:#e9f3ee; --green-l2:#f3f9f5;
+  --grey:#5b6672; --line:#dde8e2; --ink:#16211c; --bg:#f3f7f5;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px;color:var(--green-d);text-decoration:none}
+.brand .mark{width:28px;height:28px;border-radius:7px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--grey);letter-spacing:.6px}
+header.top nav a{margin-left:18px;font-size:14px;text-decoration:none;color:var(--grey)}
+header.top nav a:hover{color:var(--green)}
+.hero{background:linear-gradient(180deg,#ffffff 0%,var(--green-l2) 100%);border-bottom:1px solid var(--line);padding:56px 0 48px}
+.hero h1{font-size:36px;line-height:1.25;margin:0 0 14px;letter-spacing:-.4px;color:var(--green-d)}
+.hero p.lead{font-size:17px;color:#3a4742;max-width:720px;margin:0 0 26px}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:13px 22px;border-radius:9px;box-shadow:0 6px 18px rgba(14,122,79,.18)}
+.cta:hover{background:#0b6742}
+.cta.ghost{background:#fff;color:var(--green-d);border:1px solid var(--line);box-shadow:none;margin-left:10px}
+.cta small{opacity:.8;font-weight:500}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.badges li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--grey)}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:23px;margin:0 0 8px;color:var(--green-d);letter-spacing:-.2px}
+.sub{color:var(--grey);margin:0 0 22px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px}
+.card h3{margin:0 0 6px;font-size:15px;color:var(--green-d)}
+.card p{margin:0;font-size:14px;color:var(--grey)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{background:var(--green-l);color:var(--green-d);font-weight:600;font-size:13px;letter-spacing:.2px}
+tr:last-child td{border-bottom:0}
+code{background:var(--green-l);padding:2px 6px;border-radius:5px;font-size:13px;color:var(--green-d)}
+ol.steps{margin:0;padding-left:22px;color:#3a4742}
+ol.steps li{margin:9px 0}
+details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+details summary{cursor:pointer;font-weight:600;color:var(--green-d);font-size:15px}
+details p{margin:10px 0 0;color:var(--grey);font-size:14px}
+footer{background:var(--green-d);color:#cfe3d9;padding:30px 0;font-size:13px}
+footer a{color:#fff}
+footer .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media (max-width:640px){
+  .hero{padding:38px 0 34px}
+  .hero h1{font-size:26px}
+  .hero p.lead{font-size:15.5px}
+  .cta{display:flex;justify-content:center;margin:0 0 10px}
+  .cta.ghost{margin-left:0}
+  header.top nav{display:none}
+  h2{font-size:20px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lim-Tec Siemens Servo Motor Selector",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (web browser)",
+  "url": "https://limtech-dev.github.io/limtec-skills/",
+  "description": "Free online selector for Siemens SIMOTICS servo motors and SINAMICS drives. Enter a duty point and get motor, matched drive and cable with complete order numbers, USD reference prices and a PDF datasheet.",
+  "featureList": "160 servo motors, 0.05-100 kW, V90 / S200 / S200 Compact / S210 / S120, full Siemens order numbers, USD reference prices, PDF export",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd.",
+    "url": "https://limtec-cad-models.app.workbuddy.host/?sharecode=SOD467H7ZK"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark">LT</span>
+      <span>Lim-Tec<small>TRANSMISSION EQUIPMENT</small></span>
+    </a>
+    <nav>
+      <a href="#coverage">Coverage</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&amp;lang=zh&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">中文</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Siemens servo motor selector — free, online, no account needed</h1>
+    <p class="lead">
+      Enter a duty point — load, stroke, speed, or torque and speed — and get a ready-to-order bill of materials:
+      the matched <strong>SIMOTICS servo motor</strong>, the matched <strong>SINAMICS drive</strong>, and the
+      <strong>power / encoder / brake cable</strong>, with complete Siemens order numbers, USD reference prices and a
+      datasheet you can forward to a customer.
+    </p>
+    <a class="cta" href="https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&amp;lang=en&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">Open the selector <span aria-hidden="true">→</span></a>
+    <a class="cta ghost" href="https://limtec-cad-models.app.workbuddy.host/?v=1030&amp;sharecode=SOD467H7ZK&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">3D models &amp; own products</a>
+    <ul class="badges">
+      <li>160 servo motors</li>
+      <li>0.05 – 100 kW</li>
+      <li>V90 · S200 · S210 · S120</li>
+      <li>USD reference prices</li>
+      <li>PDF export</li>
+      <li>Works on mobile</li>
+    </ul>
+  </div>
+</div>
+
+<section id="coverage">
+  <div class="wrap">
+    <h2>What it covers</h2>
+    <p class="sub">Five Siemens servo systems, from a 0.05 kW compact axis to a 100 kW S120 multi-axis line-up.</p>
+    <table>
+      <thead>
+        <tr><th>System</th><th>Motor series</th><th>Typical use</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>SINAMICS V90</td><td>SIMOTICS S-1FL6</td><td>Cost-effective single axis, PTI pulse or PROFINET</td></tr>
+        <tr><td>SINAMICS S200</td><td>SIMOTICS S-1FL2</td><td>New-generation basic servo, PROFINET / PTI</td></tr>
+        <tr><td>SINAMICS S200 Compact</td><td>SIMOTICS S-1FL1 (200 V)</td><td>Small 200 V machines, compact panel space</td></tr>
+        <tr><td>SINAMICS S210</td><td>SIMOTICS S-1FK2</td><td>One-cable OCC servo, high dynamics, IP65/67</td></tr>
+        <tr><td>SINAMICS S120</td><td>1FK7 · 1FT7 · 1PH8</td><td>Multi-axis, high power, 15 – 100 kW</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What you get back</h2>
+    <p class="sub">Not a shortlist — an orderable bill of materials with the reasoning shown.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Motor + drive + cable</h3>
+        <p>Every position of the order number is resolved: motor frame, winding, encoder, shaft end, brake, degree of protection, plus the matching drive and the OCC or power/encoder cable.</p>
+      </div>
+      <div class="card">
+        <h3>Duty-point checks</h3>
+        <p>Rated and maximum torque, speed limits, inertia ratio and drive current are checked against the selected motor, so an undersized axis does not slip through.</p>
+      </div>
+      <div class="card">
+        <h3>Cable length codes</h3>
+        <p>Pick the run length once — the selector builds the correct length suffix (for example a 50 m OCC run) instead of leaving you to decode the catalogue.</p>
+      </div>
+      <div class="card">
+        <h3>Reference prices</h3>
+        <p>USD reference prices for the whole bill of materials, converted from actual transaction records. Formal quotations still come from Siemens or an authorised distributor.</p>
+      </div>
+      <div class="card">
+        <h3>PDF datasheet</h3>
+        <p>Export the selection as a PDF you can attach to a proposal — motor, drive, cables, checks and prices on one page.</p>
+      </div>
+      <div class="card">
+        <h3>No install, no login</h3>
+        <p>Runs in the browser, on desktop or phone. No account, no plug-in, no API key.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three inputs, one answer. The tool reads the duty point, walks the model library, and returns the first combination that passes every check.</p>
+    <ol class="steps">
+      <li><strong>Describe the axis.</strong> Load (N, kN or kg) and stroke, or directly torque and speed. Add brake, encoder type, shaft end, supply voltage and cable length if they are already specified.</li>
+      <li><strong>Let it size.</strong> The selector resolves the motor series, frame and winding, then picks the smallest drive whose current rating covers the motor, then builds the cable order number from the length code.</li>
+      <li><strong>Take the result.</strong> Copy the order numbers into your BOM, or export the PDF datasheet for the customer.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Also from Lim-Tec</h2>
+    <p class="sub">Lim-Tec (Beijing) Transmission Equipment Co., Ltd. manufactures electric cylinders, screw jacks and linear actuators, and supplies Siemens motion components to machine builders.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Electric cylinders</h3>
+        <p>DMB, EMB, GTR and FMR series — servo or AC motor driven, thrust up to 100 kN, strokes to 2 m.</p>
+      </div>
+      <div class="card">
+        <h3>Screw jacks</h3>
+        <p>SJA, SJB, KV, EHB, SCA and SCB series — single units or mechanically linked sets for synchronised lifting.</p>
+      </div>
+      <div class="card">
+        <h3>Linear actuators</h3>
+        <p>LAP, LBP, LAM and LBM series — push-pull units for dampers, gates and industrial doors.</p>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:18px">
+      Product selection and 3D models for these lines: <a href="https://limtec-cad-models.app.workbuddy.host/?v=1030&amp;sharecode=SOD467H7ZK&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">Lim-Tec selection platform</a>.
+    </p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Frequently asked</h2>
+    <details>
+      <summary>Is it really free?</summary>
+      <p>Yes. The selector is free to use and requires no account. It is published by Lim-Tec as a service to machine builders and integrators.</p>
+    </details>
+    <details>
+      <summary>Are the prices official Siemens prices?</summary>
+      <p>No. They are reference prices converted from historical transaction records into USD. A formal quotation must come from Siemens or an authorised distributor. Where no price is on record, the tool says “on request” instead of guessing.</p>
+    </details>
+    <details>
+      <summary>Which Siemens servo systems are covered?</summary>
+      <p>SINAMICS V90 with 1FL6 motors, S200 with 1FL2, S200 Compact with 1FL1 (200 V), S210 with 1FK2, and S120 with 1FK7 / 1FT7 / 1PH8. 160 motors in total, 0.05 kW to 100 kW.</p>
+    </details>
+    <details>
+      <summary>Can I use it on a phone on site?</summary>
+      <p>Yes. The layout collapses to a single column below 760 px and the selector works with touch input, so it is usable while standing next to a machine.</p>
+    </details>
+    <details>
+      <summary>Do you keep the data I enter?</summary>
+      <p>The selection runs in your browser. Only messages you deliberately submit through the contact box are stored.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© Lim-Tec (Beijing) Transmission Equipment Co., Ltd. All rights reserved.</div>
+    <div><a href="https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&amp;lang=en&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">Selector</a> · <a href="https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&amp;lang=zh&amp;utm_source=github-pages&utm_medium=organic&utm_campaign=siemens-selector-en">中文</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
