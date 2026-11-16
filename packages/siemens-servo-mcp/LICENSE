@@ -1,0 +1,36 @@
+MIT License — applied to the software (scripts and MCP server).
+
+Copyright (c) 2026 Lim-Tec (Beijing) Transmission Equipment Co., Ltd.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of the
+software in this repository (the files under `scripts/` and `mcp/`, excluding all files
+under `references/`), to deal in the Software without restriction, including without
+limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+---
+
+DATA LICENSE — applies to `references/` (motor library, price records, rule documents)
+
+© 2026 Lim-Tec (Beijing) Transmission Equipment Co., Ltd. All rights reserved.
+
+You may read, quote and use the data set to answer selection and pricing questions, and
+you may embed this skill in commercial workflows. You may not redistribute the data set as
+a standalone product, repackage it as your own selection tool, or present the reference
+prices as firm quotations.
+
+SIMOTICS, SINAMICS, SIMATIC and the order-number system are Siemens trademarks. This
+project is an independent tool built by Lim-Tec; it is not affiliated with, endorsed by or
+sponsored by Siemens AG. Order numbers and technical data were compiled from official
+Siemens catalogues and datasheets. Always confirm the final configuration and price with
+Siemens or an authorised distributor before ordering.
