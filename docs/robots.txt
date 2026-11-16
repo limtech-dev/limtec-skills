@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://limtech-dev.github.io/limtec-skills/sitemap.xml
