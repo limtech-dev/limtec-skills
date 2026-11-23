@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lim-Tec Product Selector — Screw Jacks, Electric Cylinders, Linear Actuators (Agent Skill)</title>
+<meta name="description" content="Free offline selector skill for Lim-Tec products: screw jacks (SJA, SJB, KV, EHB, SCA, SCB), servo electric cylinders (DMB, EMB, GTR, FMR) and linear actuators (LAP, LBP, LAM, LBM). Give it load, stroke, speed, unit count and layout and it returns the matched model, full order code, engineering checks and a priced bill of materials in USD.">
+<meta name="keywords" content="screw jack selection, electric cylinder selector, servo cylinder sizing, linear actuator selection, SJA screw jack, DMB electric cylinder, LAP linear actuator, Lim-Tec, order code, synchronised lifting, jack layout">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://limtech-dev.github.io/limtec-skills/limtec/">
+<link rel="alternate" hreflang="en" href="https://limtech-dev.github.io/limtec-skills/limtec/">
+<link rel="alternate" hreflang="x-default" href="https://limtech-dev.github.io/limtec-skills/limtec/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Lim-Tec">
+<meta property="og:title" content="Lim-Tec Product Selector — screw jacks, electric cylinders, linear actuators">
+<meta property="og:description" content="One command per selection: model, order code, engineering checks and a priced bill of materials. Three Lim-Tec product lines in one offline agent skill.">
+<meta property="og:url" content="https://limtech-dev.github.io/limtec-skills/limtec/">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lim-Tec Product Selector — screw jacks, electric cylinders, linear actuators">
+<meta name="twitter:description" content="Offline agent skill: screw jack, electric cylinder and linear actuator selection with order codes, engineering checks and USD reference prices.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Lim-Tec Product Selector",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Any (agent skill, Node.js 18+)",
+  "url": "https://limtech-dev.github.io/limtec-skills/limtec/",
+  "description": "Offline agent skill for Lim-Tec product selection: screw jacks (SJA, SJB, KV, EHB, SCA, SCB), servo electric cylinders (DMB, EMB, GTR, FMR) and linear actuators (LAP, LBP, LAM, LBM). Returns the matched model, full order code, engineering checks and a priced bill of materials.",
+  "featureList": "screw jack selection and layout, servo electric cylinder sizing, linear actuator sizing, synchronised lifting, order-code build-up, USD reference prices, proposal PDF export",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd.",
+    "url": "https://cn.lim-tec.com/"
+  }
+}
+</script>
+<style>
+:root{
+  --green:#0e7a4f; --green-d:#0d3a2a; --green-l:#e9f3ee; --green-l2:#f3f9f5;
+  --grey:#5b6672; --line:#dde8e2; --ink:#16211c; --bg:#f3f7f5;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--green)}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.top{background:#fff;border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px;color:var(--green-d);text-decoration:none}
+.brand .mark{width:28px;height:28px;border-radius:7px;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800}
+.brand small{display:block;font-weight:500;font-size:11px;color:var(--grey);letter-spacing:.6px}
+header.top nav a{margin-left:18px;font-size:14px;text-decoration:none;color:var(--grey)}
+header.top nav a:hover{color:var(--green)}
+.hero{background:linear-gradient(180deg,#ffffff 0%,var(--green-l2) 100%);border-bottom:1px solid var(--line);padding:56px 0 48px}
+.hero h1{font-size:36px;line-height:1.25;margin:0 0 14px;letter-spacing:-.4px;color:var(--green-d)}
+.hero p.lead{font-size:17px;color:#3a4742;max-width:720px;margin:0 0 26px}
+.cta{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:13px 22px;border-radius:9px;box-shadow:0 6px 18px rgba(14,122,79,.18)}
+.cta:hover{background:#0b6742}
+.cta.ghost{background:#fff;color:var(--green-d);border:1px solid var(--line);box-shadow:none;margin-left:10px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.badges li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--grey)}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:23px;margin:0 0 8px;color:var(--green-d);letter-spacing:-.2px}
+.sub{color:var(--grey);margin:0 0 22px;font-size:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 18px 16px;display:block;text-decoration:none;color:inherit}
+.card:hover{border-color:var(--green)}
+.card h3{margin:0 0 6px;font-size:15px;color:var(--green-d)}
+.card p{margin:0;font-size:14px;color:var(--grey)}
+.card .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--green)}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{background:var(--green-l);color:var(--green-d);font-weight:600;font-size:13px;letter-spacing:.2px}
+tr:last-child td{border-bottom:0}
+code{background:var(--green-l);padding:2px 6px;border-radius:5px;font-size:13px;color:var(--green-d)}
+pre{background:#0d3a2a;color:#d9efe4;padding:16px 18px;border-radius:10px;font-size:13px;overflow-x:auto;line-height:1.6}
+pre code{background:none;color:inherit;padding:0}
+ol.steps{margin:0;padding-left:22px;color:#3a4742}
+ol.steps li{margin:9px 0}
+footer{background:var(--green-d);color:#cfe3d9;padding:30px 0;font-size:13px}
+footer a{color:#fff}
+footer .row{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media (max-width:640px){
+  .hero{padding:38px 0 34px}
+  .hero h1{font-size:26px}
+  .hero p.lead{font-size:15.5px}
+  .cta{display:flex;justify-content:center;margin:0 0 10px}
+  .cta.ghost{margin-left:0}
+  header.top nav{display:none}
+  h2{font-size:20px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark">LT</span>
+      <span>Lim-Tec<small>TRANSMISSION EQUIPMENT</small></span>
+    </a>
+    <nav>
+      <a href="./screw-jacks/">Screw jacks</a>
+      <a href="./electric-cylinders/">Electric cylinders</a>
+      <a href="./linear-actuators/">Linear actuators</a>
+      <a href="https://github.com/limtech-dev/limtec-skills">GitHub</a>
+      <a href="../">Siemens selector</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Lim-Tec product selector — screw jacks, electric cylinders, linear actuators</h1>
+    <p class="lead">
+      One offline agent skill covers all three Lim-Tec product lines. Describe the duty point —
+      load, stroke, speed, unit count and layout — and it returns the <strong>matched model</strong>,
+      the <strong>full order code</strong>, the <strong>engineering checks</strong> (thrust, speed, power,
+      stability, life, duty cycle) and a <strong>priced bill of materials</strong> in USD reference prices.
+    </p>
+    <a class="cta" href="https://github.com/limtech-dev/limtec-skills">Get it from GitHub <span aria-hidden="true">→</span></a>
+    <a class="cta ghost" href="https://limtec-cad-models.app.workbuddy.host/?v=1030&amp;sharecode=SOD467H7ZK&amp;utm_source=github-pages&amp;utm_medium=organic&amp;utm_campaign=limtec-selector-en">Online selection &amp; 3D models</a>
+    <ul class="badges">
+      <li>3 product lines</li>
+      <li>14 series</li>
+      <li>Order-code build-up</li>
+      <li>USD reference prices</li>
+      <li>Proposal PDF export</li>
+      <li>Offline · Node.js 18+</li>
+    </ul>
+  </div>
+</div>
+
+<section id="lines">
+  <div class="wrap">
+    <h2>Three product pages, one selector</h2>
+    <p class="sub">Each page covers one product line: the series, what the selector checks, and how to install the skill for that line.</p>
+    <div class="grid">
+      <a class="card" href="./screw-jacks/">
+        <h3>Screw jacks</h3>
+        <p>SJA, SJB, KV, EHB, SCA and SCB — machine screw and ball screw jacks, single units or mechanically linked sets for synchronised lifting in H and U layouts.</p>
+        <span class="more">Screw jack selection →</span>
+      </a>
+      <a class="card" href="./electric-cylinders/">
+        <h3>Electric cylinders</h3>
+        <p>DMB, EMB, GTR and FMR — servo or AC motor driven cylinders, thrust up to 100 kN, strokes to 2 m, matched to Siemens V90 / S200 / S210 / S120 and other servo platforms.</p>
+        <span class="more">Electric cylinder sizing →</span>
+      </a>
+      <a class="card" href="./linear-actuators/">
+        <h3>Linear actuators</h3>
+        <p>LAP, LBP, LAM and LBM — rod-type push-pull units for dampers, gates and industrial doors, with AC or servo drive and limit-switch options.</p>
+        <span class="more">Linear actuator sizing →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">The engine and the price book are byte-identical to the Lim-Tec online selector — the skill is an offline wrapper, not a re-implementation.</p>
+    <ol class="steps">
+      <li><strong>Describe the duty point.</strong> Load and stroke, or thrust and speed; unit count and layout (H / U) for multi-jack groups; drive type, environment and duty profile as needed.</li>
+      <li><strong>Let it size.</strong> The selector walks the same model library as the online tool: series, frame, motion type, mounting, joints and drive, and runs the thrust, stability, life and duty-cycle checks.</li>
+      <li><strong>Take the result.</strong> A readable report or structured JSON: the model, the complete order code with every option digit resolved, and a bill of materials with USD reference prices. Proposal PDF export is built in.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Install</h2>
+    <p class="sub">Works with Claude Code, Claude Desktop (skills), and any agent host that can run a script.</p>
+<pre><code># Claude Code — whole marketplace (gets updates)
+/plugin marketplace add limtech-dev/limtec-skills
+/plugin install limtec-product-selector@limtec
+
+# or clone just this skill
+git clone https://github.com/limtech-dev/limtec-skills.git</code></pre>
+    <p class="sub" style="margin-top:14px">For claude.ai / Claude Desktop: download <code>limtec-product-selector_en_v1.0.4.zip</code> from <a href="https://github.com/limtech-dev/limtec-skills/tree/main/dist">the dist folder</a> and upload it under Customize → Skills.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Also from Lim-Tec</h2>
+    <p class="sub">Lim-Tec (Beijing) Transmission Equipment Co., Ltd. manufactures electric cylinders, screw jacks and linear actuators, and supplies Siemens motion components to machine builders.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Siemens servo selector</h3>
+        <p>Free online sizing tool for SIMOTICS servo motors and SINAMICS drives: motor + drive + cable with complete order numbers and USD reference prices.</p>
+        <p style="margin-top:8px"><a href="../">Open the Siemens selector page →</a></p>
+      </div>
+      <div class="card">
+        <h3>Online selection &amp; 3D models</h3>
+        <p>Product selection and 3D models for all Lim-Tec lines, in the browser.</p>
+        <p style="margin-top:8px"><a href="https://limtec-cad-models.app.workbuddy.host/?v=1030&amp;sharecode=SOD467H7ZK&amp;utm_source=github-pages&amp;utm_medium=organic&amp;utm_campaign=limtec-selector-en">Lim-Tec selection platform →</a></p>
+      </div>
+      <div class="card">
+        <h3>Company</h3>
+        <p>Product catalogue, news and contact for Lim-Tec (Beijing) Transmission Equipment Co., Ltd.</p>
+        <p style="margin-top:8px"><a href="https://cn.lim-tec.com/">cn.lim-tec.com →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© Lim-Tec (Beijing) Transmission Equipment Co., Ltd. All rights reserved.</div>
+    <div><a href="https://github.com/limtech-dev/limtec-skills">GitHub</a> · <a href="../">Siemens selector</a> · <a href="https://cn.lim-tec.com/">lim-tec.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
