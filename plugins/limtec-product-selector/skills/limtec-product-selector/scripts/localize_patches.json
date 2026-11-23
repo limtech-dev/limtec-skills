@@ -1,0 +1,9 @@
+{
+ "source_ws": "/storage/Users/currentUser/WorkBuddy/2026-10-16-22-36-03/选型软件",
+ "notes": [
+  "assets/images/* → assets/*：市场只允许两级目录（根/子目录/文件）",
+  "docx/docx-builder.js: imageBase './assets/images/' → './assets/'（配合扁平化）",
+  "docx/media.js: 改为运行时读 assets（瘦身，去掉 3.4MB 重复 base64）",
+  "data/engine/products/docx 的 .js → .js.gz：市场按解压后总量限 3MB，运行时由 readScript() 解压加载"
+ ]
+}
