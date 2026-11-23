@@ -1,0 +1,63 @@
+{
+  "name": "limtec",
+  "owner": {
+    "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd.",
+    "url": "https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&lang=en"
+  },
+  "metadata": {
+    "description": "Lim-Tec agent tooling for Siemens servo sizing, ordering and quoting."
+  },
+  "plugins": [
+    {
+      "name": "siemens-servo-selector",
+      "source": "./plugins/siemens-servo-selector",
+      "description": "Size a Siemens servo motor (V90 / S200 / S200 Compact / S210 / S120) for a duty point and get a ready-to-order bill of materials: motor, matched drive, power / encoder / brake cables, with full order numbers, USD reference prices and a digit-by-digit order-number explanation. 160 motors, 0.05-69 kW. Use when sizing, cross-referencing, pricing or ordering Siemens SIMOTICS servo or spindle motors and SINAMICS drives.",
+      "version": "1.0.4",
+      "strict": true,
+      "skills": [
+        "./skills/siemens-servo-selector"
+      ],
+      "author": {
+        "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd."
+      },
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "siemens",
+        "servo",
+        "motor",
+        "sinamics",
+        "v90",
+        "s200",
+        "s210",
+        "s120",
+        "1fk2",
+        "1fl6",
+        "order-number",
+        "selection"
+      ]
+    },
+    {
+      "name": "limtec-product-selector",
+      "source": "./plugins/limtec-product-selector",
+      "description": "Lim-Tec product selection for screw jacks, servo electric cylinders and linear actuators: model, full order code, engineering checks and a priced bill of materials with USD reference prices. Use when sizing or quoting a screw jack (SJA / SJB / KV / EHB / SCA / SCB), a servo electric cylinder (DMB / EMB / GTR / FMR) or a linear actuator (LAP / LBP / LAM / LBM), building an order code, or looking up a Lim-Tec price.",
+      "version": "1.0.8",
+      "strict": true,
+      "skills": [
+        "./skills/limtec-product-selector"
+      ],
+      "author": {
+        "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd."
+      },
+      "license": "SEE LICENSE IN LICENSE",
+      "keywords": [
+        "screw-jack",
+        "electric-cylinder",
+        "linear-actuator",
+        "lim-tec",
+        "selection",
+        "order-code",
+        "synchronised-lifting"
+      ]
+    }
+  ]
+}
