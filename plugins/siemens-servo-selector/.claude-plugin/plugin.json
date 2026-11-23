@@ -1,0 +1,39 @@
+{
+  "name": "siemens-servo-selector",
+  "version": "1.0.4",
+  "description": "Siemens servo motor, drive and cable selection with complete order numbers and USD reference prices.",
+  "author": {
+    "name": "Lim-Tec (Beijing) Transmission Equipment Co., Ltd.",
+    "url": "https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&lang=en"
+  },
+  "homepage": "https://siemens-servo-selector.app.workbuddy.host/?sharecode=M75HT722U2&lang=en",
+  "documentationUrl": "https://limtech-dev.github.io/limtec-skills/",
+  "supportUrl": "https://github.com/limtech-dev/limtec-skills/issues",
+  "privacyPolicyUrl": "https://limtech-dev.github.io/limtec-skills/privacy.html",
+  "icon": "https://limtech-dev.github.io/limtec-skills/icon.png",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "siemens",
+    "servo",
+    "motor",
+    "sinamics",
+    "simotics",
+    "v90",
+    "s200",
+    "s210",
+    "s120",
+    "1fk2",
+    "1fk7",
+    "1fl6",
+    "1fl2",
+    "1ft7",
+    "1ph8",
+    "sizing",
+    "selection",
+    "quoting",
+    "order-number",
+    "bill-of-materials",
+    "industrial-automation",
+    "motion-control"
+  ]
+}
