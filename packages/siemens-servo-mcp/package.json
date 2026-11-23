@@ -1,6 +1,6 @@
 {
   "name": "siemens-servo-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MCP server: Siemens servo motor + SINAMICS drive + cable selection with full order numbers and USD reference prices",
   "keywords": [
     "mcp",
