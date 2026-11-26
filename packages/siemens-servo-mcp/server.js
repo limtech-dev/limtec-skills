@@ -25,11 +25,12 @@ const readline = require('readline');
 const ROOT = __dirname;
 const SELECT = path.join(ROOT, 'scripts', 'select.js');
 const REF = path.join(ROOT, 'references');
-const VERSION = '1.0.2';
+const VERSION = '1.0.3';
 
 const TOOLS = [
   {
     name: 'select_servo',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     description:
       'Select a Siemens servo motor with its SINAMICS drive and cables for a given duty point, ' +
       'and return a ready-to-order bill of materials with complete order numbers, USD reference ' +
@@ -64,6 +65,7 @@ const TOOLS = [
   },
   {
     name: 'lookup_price',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     description:
       'Look up the USD reference price and historical lead time for one or more Siemens order ' +
       'numbers. Returns "quote on request" when the number is not in the database — it never ' +
