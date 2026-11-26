@@ -4,7 +4,7 @@ MCP server for **Siemens servo motor + SINAMICS drive + cable** selection.
 Give it a duty point, get a ready-to-order bill of materials with complete Siemens order
 numbers, USD reference prices and a digit-by-digit order-number breakdown.
 
-160 motors · 0.05–69 kW · V90/1FL6 · S200/1FL2 · S200 Compact/1FL1 · S210/1FK2 · S120/1FK7·1FT7·1PH8
+160 motors · 0.05–100 kW · V90/1FL6 · S200/1FL2 · S200 Compact/1FL1 · S210/1FK2 · S120/1FK7·1FT7·1PH8
 
 Zero dependencies, Node.js 16+, stdio transport.
 

@@ -1,12 +1,14 @@
 # Siemens servo selector — Agent Skill
 
+[![Siemens Servo Selector MCP on mcprush](https://mcprush.com/badge/siemens-servo-selector-mcp/score.svg)](https://mcprush.com/to/siemens-servo-selector-mcp?ref=badge)
+
 Size a Siemens servo drive train from a duty point and get a **ready-to-order bill of materials**:
 motor + matched drive + power / encoder / brake cable, with full Siemens order numbers, USD
 reference prices and a digit-by-digit explanation of every position in the order number.
 
 - **160 motors**: V90 / 1FL6, S200 / 1FL2, S200 Compact / 1FL1, S210 / 1FK2, S120 / 1FK7 · 1FT7 · 1PH8
 - **0.05 – 69 kW**, holding brake, absolute / resolver encoders, IP65 / IP67, 50 m cable runs
-- **697 priced order numbers** (USD reference prices)
+- **699 priced order numbers** (USD reference prices)
 - Offline. No API key, no network call, no third-party dependencies — only Node.js 16+
 
 ## Install

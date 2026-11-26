@@ -3,7 +3,7 @@
   "name": "io.github.limtech-dev/siemens-servo-mcp",
   "title": "Siemens Servo Selector",
   "description": "Siemens servo, drive and cable sizing: duty point in, orderable BOM with full order numbers.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "websiteUrl": "https://limtech-dev.github.io/limtec-skills/",
   "repository": {
     "url": "https://github.com/limtech-dev/limtec-skills",
@@ -15,7 +15,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "siemens-servo-mcp",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "transport": {
         "type": "stdio"
       },
