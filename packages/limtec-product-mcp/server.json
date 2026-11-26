@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.limtech-dev/limtec-product-mcp",
+  "title": "Lim-Tec Product Selector",
+  "description": "Screw jack, electric cylinder and linear actuator selection with order codes and reference prices.",
+  "version": "1.0.2",
+  "websiteUrl": "https://limtech-dev.github.io/limtec-skills/limtec/",
+  "repository": {
+    "url": "https://github.com/limtech-dev/limtec-skills",
+    "source": "github",
+    "id": "1468336910"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "limtec-product-mcp",
+      "version": "1.0.2",
+      "transport": {
+        "type": "stdio"
+      },
+      "runtimeHint": "npx",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ]
+    }
+  ]
+}

@@ -24,6 +24,7 @@ const SELECT = path.join(ROOT, 'scripts', 'select.js');
 const TOOLS = [
   {
     name: 'select_limtec',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     description: 'Lim-Tec product selection for screw jacks (SJA/SJB/KV/EHB/SCA/SCB), servo electric cylinders (DMB/EMB/GTR/FMR) and linear actuators (LAP/LBP/LAM/LBM). Given load, stroke, speed and duty parameters it returns the matched model, full order code, engineering checks (thrust, speed, power, stability, life) and public reference prices in CNY with an official USD conversion at a fixed published rate (rate date included). Engine is byte-identical to the Lim-Tec online selector. Note load units: LAP/LBP default to tonnes, LAM to kg. Call with list_fields=true first if a field name is unclear.',
     inputSchema: {
       type: 'object',
@@ -87,7 +88,7 @@ async function handle(line) {
       jsonrpc: '2.0', id, result: {
         protocolVersion: '2024-11-05',
         capabilities: { tools: {} },
-        serverInfo: { name: 'limtec-product-selector', version: '1.0.0' }
+        serverInfo: { name: 'limtec-product-selector', version: '1.0.2' }
       }
     });
   }
