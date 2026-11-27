@@ -1,14 +1,15 @@
 'use strict';
 /* Single source of the USD reference rate.
  *
- * The Lim-Tec price book is in CNY. This edition quotes USD at a fixed rate that
- * is reviewed when the rate moves: change it here, rerun the build, and both the
- * CLI output and the proposal PDF follow.
+ * Rate period 2026-11: the twice-yearly review falls on 15 November; 15 Nov 2026 was a
+ * Sunday, so the previous trading day 2026-11-13 applies. Source: CFETS central parity.
+ * Next review: 2027-05-14 (15 May 2027 is a Saturday).
  *
+ * The Lim-Tec price book stays in CNY; USD is derived by dividing by USD_RATE.
  * The rate value and date are internal: never printed in customer-facing output
- * (README, CLI text, JSON, proposal PDF). Internally the price book stays in CNY.
+ * (README, CLI text, JSON, proposal PDF).
  */
-const USD_RATE = 6.6726;
-const RATE_DATE = '2026-11-15';
+const USD_RATE = 6.7152;
+const RATE_DATE = '2026-11-13';
 
 module.exports = { USD_RATE, RATE_DATE };

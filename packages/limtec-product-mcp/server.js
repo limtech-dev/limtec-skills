@@ -88,7 +88,7 @@ async function handle(line) {
       jsonrpc: '2.0', id, result: {
         protocolVersion: '2024-11-05',
         capabilities: { tools: {} },
-        serverInfo: { name: 'limtec-product-selector', version: '1.0.3' }
+        serverInfo: { name: 'limtec-product-selector', version: '1.0.5' }
       }
     });
   }

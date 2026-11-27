@@ -4,7 +4,7 @@ description: "Lim-Tec product selector - screw jack selector; servo electric cyl
 license: "Proprietary - (c) Lim-Tec (Beijing) Transmission Equipment Co., Ltd. Internal use by Lim-Tec channels and customers only; not for reverse engineering the catalogue or price system."
 compatibility: "Claude Code and Claude Desktop with bash and file read access; Node.js 18+ required to run the selection engine."
 metadata:
-  version: "1.0.8"
+  version: "1.0.4"
   display_name: "Lim-Tec product selector (screw jacks / servo electric cylinders / linear actuators)"
   edition: "English"
   author: "Lim-Tec (Beijing) Transmission Equipment Co., Ltd."

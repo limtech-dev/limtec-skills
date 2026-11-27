@@ -40,7 +40,7 @@
       "name": "limtec-product-selector",
       "source": "./plugins/limtec-product-selector",
       "description": "Lim-Tec product selection for screw jacks, servo electric cylinders and linear actuators: model, full order code, engineering checks and a priced bill of materials with USD reference prices. Use when sizing or quoting a screw jack (SJA / SJB / KV / EHB / SCA / SCB), a servo electric cylinder (DMB / EMB / GTR / FMR) or a linear actuator (LAP / LBP / LAM / LBM), building an order code, or looking up a Lim-Tec price.",
-      "version": "1.0.8",
+      "version": "1.0.4",
       "strict": true,
       "skills": [
         "./skills/limtec-product-selector"
