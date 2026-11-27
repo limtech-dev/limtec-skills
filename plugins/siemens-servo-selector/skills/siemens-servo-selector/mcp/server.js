@@ -25,11 +25,12 @@ const readline = require('readline');
 const ROOT = path.join(__dirname, '..');
 const SELECT = path.join(ROOT, 'scripts', 'select.js');
 const REF = path.join(ROOT, 'references');
-const VERSION = '1.0.0';
+const VERSION = '1.0.3';
 
 const TOOLS = [
   {
     name: 'select_servo',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     description:
       'Select a Siemens servo motor with its SINAMICS drive and cables for a given duty point, ' +
       'and return a ready-to-order bill of materials with complete order numbers, USD reference ' +
@@ -64,6 +65,7 @@ const TOOLS = [
   },
   {
     name: 'lookup_price',
+    annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
     description:
       'Look up the USD reference price and historical lead time for one or more Siemens order ' +
       'numbers. Returns "quote on request" when the number is not in the database — it never ' +
@@ -135,8 +137,7 @@ async function callTool(name, a) {
   if (name === 'lookup_price') {
     const list = Array.isArray(a.order_numbers) ? a.order_numbers : [];
     const lines = [
-      `USD reference prices (1 USD = ${META.rate_cny_per_usd} CNY, ${META.rate_date}). ` +
-      'Indicative only — not an offer.',
+      'USD reference prices (indicative only — not an offer).',
       '',
       '| Order number | USD ref. | Price date | Lead time (historical) | Note |',
       '|---|---|---|---|---|'
@@ -179,7 +180,8 @@ function renderSelection(res) {
   }
   const out = [];
   out.push(`Query: ${qText(res.query)}`);
-  out.push(`Candidates found: ${res.count} · currency USD · fx 1 USD = ${res.fx.rate_cny_per_usd} CNY (${res.fx.date})`);
+  out.push(`Candidates found: ${res.count} · currency USD`
+    + ((res.fx && res.fx.rate_cny_per_usd) ? ` · fx 1 USD = ${res.fx.rate_cny_per_usd} CNY (${res.fx.date})` : ''));
   if (res.big) out.push(`> Demand ≈ ${res.demand_kw} kW — above 7 kW, so S200/V90/S210 cannot cover it.`);
   res.candidates.forEach((b, i) => {
     out.push('');

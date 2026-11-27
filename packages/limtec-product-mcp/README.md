@@ -1,5 +1,7 @@
 # limtec-product-mcp
 
+[![Lim-Tec Product Selector MCP on mcprush](https://mcprush.com/badge/lim-tec-product-selector-mcp/score.svg)](https://mcprush.com/to/lim-tec-product-selector-mcp?ref=badge)
+
 MCP (Model Context Protocol) server for **Lim-Tec product selection**:
 screw jacks (SJA / SJB / KV / EHB / SCA / SCB), servo electric cylinders
 (DMB / EMB / GTR / FMR) and linear actuators (LAP / LBP / LAM / LBM).
@@ -8,9 +10,8 @@ Given a duty point (load, stroke, speed, unit count, layout), the
 `select_limtec` tool returns the matched model, the full order code,
 engineering checks (thrust, speed, power, stability, life, duty cycle) and
 public reference prices in **CNY** with an official **USD** conversion at a
-fixed published rate (rate and date included in every result — e.g.
-`USD 1,227 at 1 USD = 6.6726 CNY, 2026-11-15`). The rate is reviewed by
-Lim-Tec and updated with each release.
+fixed published rate. The rate is reviewed by Lim-Tec and updated with each
+release.
 
 The selection engine is **byte-identical** to the Lim-Tec online selector —
 this package is an offline MCP wrapper, not a re-implementation.

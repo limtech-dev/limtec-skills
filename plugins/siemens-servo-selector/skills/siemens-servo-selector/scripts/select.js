@@ -288,7 +288,10 @@ function main() {
     console.log(JSON.stringify({
       query: q, big: res.big, demand_kw: res.dkw, notes: res.notes.map(noteEn),
       count: res.list.length,
-      currency: 'USD', fx: { rate_cny_per_usd: RATE_META.rate_cny_per_usd, date: RATE_META.rate_date },
+      currency: 'USD',
+      fx: (RATE_META.rate_cny_per_usd
+        ? { rate_cny_per_usd: RATE_META.rate_cny_per_usd, date: RATE_META.rate_date }
+        : undefined),
       candidates: res.boms
     }, null, 2));
   } else {
