@@ -60,7 +60,7 @@ English and Chinese option values are both accepted (`layout=h` or `layout=Håž‹å
 ## Rules that must be respected
 
 1. **Load unit.** The default unit depends on the series: most jacks and cylinders use `kN` or `t`, LAP/LBP default to `t` (tonnes), LAM defaults to `kg`. Check `--list-fields` and **repeat the unit back to the user** before naming a model. 10 (tonnes) and 10 (kN) differ by an order of magnitude - this is the most common selection error.
-2. **Prices are public reference prices in USD, tax included** - converted from the Lim-Tec price book at 1 USD = 6.6726 CNY (rate of 2026-11-15, held in `scripts/rate.js` as `USD_RATE`). Never invent a price; report "on request" lines exactly as they are.
+2. **Prices are public reference prices in USD, tax included** - converted from the Lim-Tec price book at a rate reviewed by Lim-Tec (held in `scripts/rate.js` as `USD_RATE`). Never invent a price; report "on request" lines exactly as they are.
 3. **3D models (STEP) are not distributed with this skill.** Point the user to the online platform: `https://limtec-cad-models.app.workbuddy.host/?v=1030&sharecode=SOD467H7ZK`
 4. **PDF proposal.** `node scripts/make_docx.js ... --docx=proposal.docx --pdf=proposal.pdf` builds the Word proposal, turns it into English and renders a watermarked PDF (Lim-Tec watermark, copyright footer). Sell in USD; the proposal is a reference document, not a binding offer.
 5. **When nothing matches**, report `best` (closest candidate) and `unresolved` (the conditions that failed) and suggest relaxing a parameter or contacting sales. Never guess a model.

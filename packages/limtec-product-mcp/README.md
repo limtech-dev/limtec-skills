@@ -9,9 +9,8 @@ screw jacks (SJA / SJB / KV / EHB / SCA / SCB), servo electric cylinders
 Given a duty point (load, stroke, speed, unit count, layout), the
 `select_limtec` tool returns the matched model, the full order code,
 engineering checks (thrust, speed, power, stability, life, duty cycle) and
-public reference prices in **CNY** with an official **USD** conversion at a
-fixed published rate. The rate is reviewed by Lim-Tec and updated with each
-release.
+public reference prices in **USD**, converted from the Lim-Tec list price at a
+rate reviewed by Lim-Tec and updated with each release.
 
 The selection engine is **byte-identical** to the Lim-Tec online selector —
 this package is an offline MCP wrapper, not a re-implementation.

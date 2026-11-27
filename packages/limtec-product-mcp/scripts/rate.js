@@ -5,7 +5,8 @@
  * is reviewed when the rate moves: change it here, rerun the build, and both the
  * CLI output and the proposal PDF follow.
  *
- * 2026-11-15  mid rate  1 USD = 6.6726 CNY
+ * The rate value and date are internal: never printed in customer-facing output
+ * (README, CLI text, JSON, proposal PDF). Internally the price book stays in CNY.
  */
 const USD_RATE = 6.6726;
 const RATE_DATE = '2026-11-15';

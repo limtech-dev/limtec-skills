@@ -47,10 +47,11 @@ if (hasFlag('raw')) setRaw(true);
 
 const PRODUCT_LABEL = { screwjack: 'Screw Jacks', cylinder: 'Electric Cylinders', rod: 'Linear Actuators' };
 const WEB_LINK = 'https://limtec-cad-models.app.workbuddy.host/?v=1030&sharecode=SOD467H7ZK';
-/* USD reference price = CNY price / rate; the rate lives in scripts/rate.js. */
+/* USD reference price = Lim-Tec list price / rate; the rate lives in scripts/rate.js
+   and is never disclosed in customer-facing output. */
 const { USD_RATE, RATE_DATE } = require('./rate');
-const PRICE_NOTE = 'Prices are public reference prices, tax included, shown in USD converted at 1 USD = '
-  + USD_RATE + ' CNY (rate of ' + RATE_DATE + '), identical to the Lim-Tec online selector. '
+const PRICE_NOTE = 'Prices are public reference prices, tax included, quoted in USD '
+  + '(converted from the Lim-Tec list price at a rate reviewed by Lim-Tec). '
   + 'They are indicative only - a binding quotation in USD is issued by Lim-Tec.';
 
 /* ---------- 2. load the engine in a shared scope (mirrors the browser script tags) ---------- */
@@ -283,6 +284,36 @@ function money(v) {
   return 'USD ' + Math.round(v / USD_RATE).toLocaleString('en-US');
 }
 
+/* The JSON artefact is customer-facing: every price is USD and no FX rate is disclosed.
+   Internally the quote is held in list-price units so money() and the table stay consistent. */
+function usdView(R0) {
+  const q = R0.quote || { rows: [], total: null, missing: [] };
+  const rows = (q.rows || []).map((r) => {
+    const u = num(r.unit_price);
+    const qty = r.qty || 0;
+    return {
+      desc: r.desc,
+      spec: r.spec,
+      qty: r.qty,
+      unit_price: u == null ? null : Math.round(u / USD_RATE),
+      amount: u == null ? null : Math.round(u * qty / USD_RATE),
+    };
+  });
+  const priced = rows.filter((r) => r.amount != null);
+  const out = Object.assign({}, R0, {
+    quote: {
+      currency: 'USD',
+      rows,
+      /* total is summed from the rounded row amounts so a customer can add the lines up */
+      total: priced.length && q.total != null ? priced.reduce((a, r) => a + r.amount, 0) : null,
+      missing: q.missing || [],
+    },
+  });
+  delete out.usd_rate;
+  delete out.usd_rate_date;
+  return out;
+}
+
 function markdown(R0) {
   const L = [];
   L.push('## Lim-Tec selection - ' + R0.product_label);
@@ -374,7 +405,7 @@ function main() {
       if (ok) pass++;
     }
     console.log('demo: ' + pass + '/3 passed');
-    if (JSON_OUT) fs.writeFileSync(JSON_OUT, JSON.stringify(results, null, 1));
+    if (JSON_OUT) fs.writeFileSync(JSON_OUT, JSON.stringify(results.map(usdView), null, 1));
     return pass === DEMOS.length ? 0 : 1;
   }
   if (!PRODUCT || !RENDER[PRODUCT]) {
@@ -393,9 +424,7 @@ function main() {
   R0.generated_at = new Date().toISOString().slice(0, 10);
   R0.link = WEB_LINK;
   R0.price_note = PRICE_NOTE;
-  R0.usd_rate = USD_RATE;
-  R0.usd_rate_date = RATE_DATE;
-  if (JSON_OUT) fs.writeFileSync(JSON_OUT, JSON.stringify(R0, null, 1));
+  if (JSON_OUT) fs.writeFileSync(JSON_OUT, JSON.stringify(usdView(R0), null, 1));
   if (LINT) {
     const left = lintable(R0);
     console.log(left.length ? JSON.stringify(left, null, 1) : 'no untranslated fragments');

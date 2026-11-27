@@ -43,7 +43,7 @@ Layout drawing: 四台机械同步螺旋升降机H型布置.png
 - Brake recommendation: SJA100-1000 the standard trapezoidal screw is self-locking, V1/L1 self-locking in both L1 and V1, a motor brake is not required (add one if the customer wants redundancy)
 - (12 more notes in the JSON output - same message, other candidate duty points)
 
-> Prices are public reference prices, tax included, shown in USD converted at 1 USD = 6.6726 CNY (rate of 2026-11-15), identical to the Lim-Tec online selector. They are indicative only - a binding quotation in USD is issued by Lim-Tec.
+> Prices are public reference prices, tax included, quoted in USD (converted from the Lim-Tec list price at a rate reviewed by Lim-Tec), identical to the Lim-Tec online selector. They are indicative only - a binding quotation in USD is issued by Lim-Tec.
 > 3D models and the online version: https://limtec-cad-models.app.workbuddy.host/?v=1030&sharecode=SOD467H7ZK
 ```
 

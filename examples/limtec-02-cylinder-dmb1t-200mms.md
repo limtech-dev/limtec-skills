@@ -32,7 +32,7 @@ Calculated: total_power_kW=3.27, motor_torque_Nm=15.61, effective_load_kN=9.81, 
 
 Priced on request: AC servo motor + drive; Quotation required: accessory AR
 
-> Prices are public reference prices, tax included, shown in USD converted at 1 USD = 6.6726 CNY (rate of 2026-11-15), identical to the Lim-Tec online selector. They are indicative only - a binding quotation in USD is issued by Lim-Tec.
+> Prices are public reference prices, tax included, quoted in USD (converted from the Lim-Tec list price at a rate reviewed by Lim-Tec), identical to the Lim-Tec online selector. They are indicative only - a binding quotation in USD is issued by Lim-Tec.
 > 3D models and the online version: https://limtec-cad-models.app.workbuddy.host/?v=1030&sharecode=SOD467H7ZK
 ```
 
